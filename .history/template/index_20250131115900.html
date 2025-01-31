@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rent Split Calculator</title>
+</head>
+<body>
+    <h2>Calculate Rent Split</h2>
+    <form method="post">
+        Rent: <input type="text" name="rent" required><br>
+        Total Square Feet: <input type="text" name="totalsqft" required><br>
+        Bedroom Square Feet: <input type="text" name="bedroomsqft" required><br>
+        Roommates in Bedroom: <input type="text" name="roommates" required><br>
+        Total Suitemates: <input type="text" name="total_suitemates" required><br>
+        <input type="submit" value="Calculate">
+    </form>
+    {% if result is not none %}
+        <h3>Each Roommate Pays: ${{ result }}</h3>
+    {% endif %}
+    {% if error %}
+        <p style="color: red;">Error: {{ error }}</p>
+    {% endif %}
+</body>
+</html>
